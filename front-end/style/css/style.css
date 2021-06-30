@@ -1,0 +1,14 @@
+/* --- GLOBAL --- */
+* {
+  margin: 0;
+  padding: 0; }
+
+body {
+  justify-content: center; }
+
+/* --- GLOBAL --- */
+/* Roboto font applied to all pages */
+body {
+  font-family: "Roboto", sans-serif; }
+
+/*# sourceMappingURL=style.css.map */

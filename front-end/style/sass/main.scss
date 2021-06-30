@@ -1,0 +1,17 @@
+// -----------------------  //
+//     ALL SCSS FILES       //
+//   MUST BE INCLUDED IN    //
+//        MAIN.SCSS         //
+// -----------------------  //
+
+
+@import "./utils/variables";
+@import "./utils/mixins";
+
+@import "./base/global";
+@import "./base/typography";
+
+@import "./layout/header";
+@import "./layout/footer";
+
+@import "./pages/home-page";

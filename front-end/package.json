@@ -1,0 +1,19 @@
+{
+  "name": "loupaubour_5_09062021",
+  "version": "1.0.0",
+  "description": "Orinoco",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch style/sass/main.scss:style/css/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Okamixtape/LoupAubour_5_09062021.git"
+  },
+  "author": "Loup Aubour",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Okamixtape/LoupAubour_5_09062021/issues"
+  },
+  "homepage": "https://github.com/Okamixtape/LoupAubour_5_09062021#readme"
+}
