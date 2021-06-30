@@ -1,15 +1,61 @@
+/* --- COLOR VARIABLES --- */
+/* Main colors */
 /* --- GLOBAL --- */
 * {
   margin: 0;
   padding: 0; }
 
 body {
-  justify-content: center;
-  background-color: aquamarine; }
+  justify-content: center; }
 
 /* --- GLOBAL --- */
 /* Roboto font applied to all pages */
 body {
   font-family: "Roboto", sans-serif; }
+
+/* --- SAME HEADER FOR ALL PAGES --- */
+.header {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  display: flex; }
+  .header__navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    background-color: #e7d2e0;
+    border-radius: 0.5em;
+    padding: 2em; }
+    .header__navbar--img {
+      width: 15em; }
+    .header__navbar--panier {
+      padding-right: 0.5em;
+      font-size: 1.4em;
+      color: #000;
+      text-decoration: inherit; }
+
+/* --- SAME FOOTER FOR ALL PAGES --- */
+.footer {
+  display: flex;
+  height: 4em;
+  margin-top: 2em; }
+  .footer__navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    background-color: #e7d2e0;
+    list-style-type: none; }
+    .footer__navbar--legal a, .footer__navbar--contact a {
+      text-decoration: inherit;
+      color: #794166;
+      padding: 0.5em;
+      background-color: #FFF;
+      border-radius: 0.5em; }
+
+.main__teddies--heading {
+  text-align: center; }
 
 /*# sourceMappingURL=style.css.map */

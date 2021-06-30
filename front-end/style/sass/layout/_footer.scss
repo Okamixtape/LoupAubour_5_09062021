@@ -1,0 +1,28 @@
+// ------------------------  //
+//      /* FOOTER */         //
+// Dedicated to footer style //
+// ------------------------  //
+
+/* --- SAME FOOTER FOR ALL PAGES --- */
+
+.footer {
+    display: flex;
+    height: 4em;
+    margin-top: 2em;
+    &__navbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        width: 100%;
+        background-color: $color-primary;
+        list-style-type: none;
+        &--legal a,
+        &--contact a {
+            text-decoration: inherit;
+            color: darken($color-primary, 50%);
+            padding: 0.5em;
+            background-color: $color-white;
+            border-radius: 0.5em;
+        }
+    }
+}

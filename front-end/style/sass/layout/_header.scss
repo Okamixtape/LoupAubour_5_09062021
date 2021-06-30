@@ -1,0 +1,32 @@
+// ------------------------  //
+//      /* HEADER */         //
+// Dedicated to header style //
+// ------------------------  //
+
+/* --- SAME HEADER FOR ALL PAGES --- */
+
+.header {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    display: flex;
+    &__navbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        background-color: $color-primary;
+        border-radius: 0.5em;
+        padding: 2em;
+        &--img {
+            width: 15em;
+        }
+        &--panier {
+            padding-right: 0.5em;
+            font-size: 1.4em;
+            color: $color-anchor;
+            text-decoration: inherit;
+        }
+    }
+}
