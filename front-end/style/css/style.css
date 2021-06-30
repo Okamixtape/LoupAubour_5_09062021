@@ -4,7 +4,8 @@
   padding: 0; }
 
 body {
-  justify-content: center; }
+  justify-content: center;
+  background-color: aquamarine; }
 
 /* --- GLOBAL --- */
 /* Roboto font applied to all pages */
