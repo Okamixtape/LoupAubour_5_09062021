@@ -16,6 +16,7 @@
         width: 100%;
         background-color: $color-primary;
         list-style-type: none;
+        margin-bottom: unset;
         &--legal a,
         &--contact a {
             text-decoration: inherit;

@@ -1,5 +1,6 @@
 /* --- COLOR VARIABLES --- */
 /* Main colors */
+/* Boxes for Teddies / Homepage */
 /* --- GLOBAL --- */
 * {
   margin: 0;
@@ -47,7 +48,8 @@ body {
     justify-content: space-around;
     width: 100%;
     background-color: #e7d2e0;
-    list-style-type: none; }
+    list-style-type: none;
+    margin-bottom: unset; }
     .footer__navbar--legal a, .footer__navbar--contact a {
       text-decoration: inherit;
       color: #794166;
@@ -55,7 +57,96 @@ body {
       background-color: #FFF;
       border-radius: 0.5em; }
 
+/* Homepage / Teddies Overview */
 .main__teddies--heading {
   text-align: center; }
+.main__teddies--choose {
+  text-align: center;
+  margin-bottom: 1em; }
+
+.containerTeddies__boxes a {
+  color: #000;
+  text-decoration: inherit; }
+.containerTeddies__boxes {
+  height: 25em;
+  background-color: #e7d2e0;
+  border-radius: 18px;
+  padding: 0.5em;
+  margin: 10px 0 25px 0;
+  box-shadow: 4px 2px 20px #d9d9d9;
+  margin-left: 1em;
+  margin-right: 1em; }
+  .containerTeddies__boxes--img {
+    height: 100%;
+    max-width: 50%;
+    object-fit: cover;
+    float: left;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    margin-right: 1em; }
+  .containerTeddies__boxes--name {
+    font-weight: bold;
+    margin-bottom: 0.2em; }
+  .containerTeddies__boxes--price {
+    font-size: 1.3em;
+    margin-bottom: unset; }
+  .containerTeddies__boxes--fullstars {
+    color: #ffa500;
+    font-size: 1.5em;
+    margin-bottom: 0.2em; }
+  .containerTeddies__boxes--emptystars {
+    color: grey; }
+
+/* Product style */
+.heading__logo {
+  text-align: center; }
+.heading__catchphrase {
+  text-align: center;
+  margin-bottom: 1em; }
+
+.containerProduct__boxes a {
+  color: #000;
+  text-decoration: inherit; }
+.containerProduct__boxes {
+  height: 25em;
+  background-color: #e7d2e0;
+  border-radius: 18px;
+  padding: 0.5em;
+  margin: 10px 0 25px 0;
+  box-shadow: 4px 2px 20px #d9d9d9;
+  margin-left: 1em;
+  margin-right: 1em; }
+  .containerProduct__boxes--img {
+    height: 100%;
+    max-width: 50%;
+    object-fit: cover;
+    float: left;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    margin-right: 1em; }
+  .containerProduct__boxes--name {
+    font-weight: bold;
+    margin-top: 0.2em; }
+  .containerProduct__boxes--price {
+    font-size: 1.3em; }
+  .containerProduct__boxes--fullstars {
+    color: #ffa500;
+    font-size: 1.5em; }
+  .containerProduct__boxes--emptystars {
+    color: grey; }
+  .containerProduct__boxes--color {
+    margin-top: 0.4em;
+    margin-bottom: 0.4em; }
+  .containerProduct__boxes--color label {
+    margin-bottom: 0.5em; }
+  .containerProduct__boxes--color select {
+    padding: 5px;
+    margin: 10px;
+    border-radius: 10px; }
+  .containerProduct__boxes--btn button {
+    margin-top: 1em;
+    background-color: #db2777;
+    color: #FFF;
+    font-size: 1.2em; }
 
 /*# sourceMappingURL=style.css.map */

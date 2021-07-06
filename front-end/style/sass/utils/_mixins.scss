@@ -2,3 +2,27 @@
 //      /* MIXINS */        //
 //   Dedicated to mixins    //
 // -----------------------  //
+
+/* Boxes for Teddies / Homepage */
+
+@mixin boxesTeddies {
+    height: 25em;
+    background-color: $color-primary;
+    border-radius: 18px;
+    padding: 0.5em;
+    margin: 10px 0 25px 0;
+    box-shadow: 4px 2px 20px $color-bs;
+}
+
+@mixin normalizeText {
+    color: $color-anchor;
+    text-decoration: inherit;
+}
+
+@mixin colorFullStar {
+    color: #ffa500;
+}
+
+@mixin colorEmptyStar {
+    color: grey;
+}

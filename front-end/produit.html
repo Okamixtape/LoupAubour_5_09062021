@@ -38,8 +38,34 @@
     <!-- MAIN -->
 
     <main>
-        <div class="main__produits">
-
+        <div class="heading">
+            <h1 class="heading__logo">OriTeddies</h1>
+            <h2 class="heading__catchphrase">Vous êtes intéressé par ce doudou ?<br/>Commandez-le sans plus attendre !</h2>
+        </div>
+        <div class="containerProduct__boxes">
+            <img src="../back-end/images/teddy_1.jpg" alt="Photo de l'ourson Norbert" class="containerProduct__boxes--img"/>
+            <h3 class="containerProduct__boxes--name">Norbert</h3>
+            <div class="containerTeddies__boxes--fullstars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <span class="containerTeddies__boxes--emptystars"><i class="fas fa-star"></i></span>
+            </div>
+            <p class="containerProduct__boxes--description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <p class="containerProduct__boxes--price">Seulement <strong>29€</strong></p>
+            <div class="containerProduct__boxes--color">
+                <label for="Choisissez la couleur de votre doudou">Choisissez la <strong>couleur</strong> de votre doudou :</label>
+                <select name="Choisissez la couleur de votre doudou">
+                    <option value="Tan">Tan</option>
+                    <option value="Chocolate">Chocolate</option>
+                    <option value="Black">Black</option>
+                    <option value="White">White</option>
+                </select>
+            </div>
+            <div class="containerProduct__boxes--btn d-grid gap-2">
+                <button class="btn" type="button">Ajouter au panier</button>
+            </div>
         </div>
     </main>
 

@@ -1,23 +1,21 @@
 //  --------------------  //
-//  /* HOMEPAGE MENU */   //
-// Dedicated to HP style  //
+//  /* PRODUCT PAGE */    //
+// Dedicated to products  //
 //  --------------------  //
 
-/* Homepage / Teddies Overview */
+/* Product style */
 
-.main {
-    &__teddies {
-        &--heading {
-            text-align: center;
-        }
-        &--choose {
-            text-align: center;
-            margin-bottom: 1em;
-        }
+.heading {
+    &__logo {
+        text-align: center;
+    }
+    &__catchphrase {
+        text-align: center;
+        margin-bottom: 1em;
     }
 }
 
-.containerTeddies {
+.containerProduct {
     &__boxes a {
         @include normalizeText;
     }
@@ -36,19 +34,35 @@
         }
         &--name {
             font-weight: bold;
-            margin-bottom: 0.2em;
+            margin-top: 0.2em;
         }
         &--price {
             font-size: 1.3em;
-            margin-bottom: unset;
         }
         &--fullstars {
             @include colorFullStar;
             font-size: 1.5em;
-            margin-bottom: 0.2em;
         }
         &--emptystars {
             @include colorEmptyStar;
+        }
+        &--color {
+            margin-top: 0.4em;
+            margin-bottom: 0.4em;
+        }
+        &--color label {
+            margin-bottom: 0.5em;
+        }
+        &--color select {
+            padding: 5px;
+            margin: 10px;
+            border-radius: 10px; 
+        }
+        &--btn button {
+            margin-top: 1em;
+            background-color: $color-btn;
+            color: $color-white;
+            font-size: 1.2em;
         }
     }
 }
