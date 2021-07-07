@@ -17,6 +17,10 @@
     }
 }
 
+#teddiesList {
+    padding-left: unset;
+}
+
 .containerTeddies {
     &__boxes a {
         @include normalizeText;

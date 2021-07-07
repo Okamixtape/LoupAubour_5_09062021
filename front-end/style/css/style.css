@@ -64,6 +64,9 @@ body {
   text-align: center;
   margin-bottom: 1em; }
 
+#teddiesList {
+  padding-left: unset; }
+
 .containerTeddies__boxes a {
   color: #000;
   text-decoration: inherit; }
