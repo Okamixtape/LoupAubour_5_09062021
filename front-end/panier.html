@@ -38,8 +38,45 @@
     <!-- MAIN -->
 
     <main>
-        <div class="main__panier">
-
+        <div class="heading">
+            <h1 class="heading__logo">OriTeddies</h1>
+            <h2 class="heading__sublogo">Récapitulatif de votre panier :</h2>
+        </div>
+        <div class="containerCart">
+            <div class="containerCart__listBox">
+                <h3 class="containerCart__listBox--name">Liste des produit(s) ajouté(s)</h3>
+                <p class="containerTeddies__listBox--totalPrice">Prix total de votre commande : ...€</p>
+            </div>
+        </div>
+        <div class="containerContact">
+            <form class="containerContact__form grid grid-cols-4 gap-4">
+            <h3>Pour valider votre commande,<br/>merci de remplir ce formulaire :</h3>
+            <div class="containerContact__form--firstName">
+                <label for="prénom">Votre prénom : </label>
+                <input type="text" name="Prénom" required="">
+            </div>
+            <div class="containerContact__form--LastName">
+                <label for="nom">Votre nom : </label>
+                <input type="text" name="Nom" required="">
+            </div>
+            <div class="containerContact__form--address">
+                <label for="adresse">Votre adresse : </label>
+                <textarea type="text" name="Adresse" required=""></textarea>
+            </div>
+            <div class="containerContact__form--city">
+                <label for="ville">Votre ville : </label>
+                <input type="text" name="Ville" required="">
+            </div>
+            <div class="containerContact__form--email">
+                <label for="email">Votre adresse mail : </label>
+                <input type="email" class="name" name="Adresse mail" required="">
+            </div>
+            <div class="containerContact__form--submit d-grid gap-2">
+                <a href="confirmation.html">
+                    <button class="btn btn-primary" type="button" name="submit">Finaliser votre commande</button>
+                </a>
+            </div>
+        </form>
         </div>
     </main>
 

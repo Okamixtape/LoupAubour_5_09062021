@@ -1,0 +1,36 @@
+//  --------------------  //
+//    /* CART PAGE */     //
+//   Dedicated to cart    //
+//  --------------------  //
+
+/* Cart style */
+
+.containerCart {
+    &__listBox {
+        @include box;
+        height: unset;
+        margin-left: 1em;
+        margin-right: 1em;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+.containerContact {
+    @include box;
+    height: unset;
+    margin-left: 1em;
+    margin-right: 1em;
+    &__form {
+        text-align: center;
+        &--firstName {
+            margin-top: 1em;
+        }
+    }
+    &__form button {
+        background-color: #db2777;
+        border-color: #db2777;
+        margin-top: 1em;
+    }
+}

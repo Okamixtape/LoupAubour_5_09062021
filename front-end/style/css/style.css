@@ -100,7 +100,7 @@ body {
 /* Product style */
 .heading__logo {
   text-align: center; }
-.heading__catchphrase {
+.heading__sublogo {
   text-align: center;
   margin-bottom: 1em; }
 
@@ -148,5 +148,53 @@ body {
     background-color: #db2777;
     color: #FFF;
     font-size: 1.2em; }
+
+/* Cart style */
+.containerCart__listBox {
+  height: 25em;
+  background-color: #e7d2e0;
+  border-radius: 18px;
+  padding: 0.5em;
+  margin: 10px 0 25px 0;
+  box-shadow: 4px 2px 20px #d9d9d9;
+  height: unset;
+  margin-left: 1em;
+  margin-right: 1em;
+  display: flex;
+  flex-direction: column;
+  text-align: center; }
+
+.containerContact {
+  height: 25em;
+  background-color: #e7d2e0;
+  border-radius: 18px;
+  padding: 0.5em;
+  margin: 10px 0 25px 0;
+  box-shadow: 4px 2px 20px #d9d9d9;
+  height: unset;
+  margin-left: 1em;
+  margin-right: 1em; }
+  .containerContact__form {
+    text-align: center; }
+    .containerContact__form--firstName {
+      margin-top: 1em; }
+  .containerContact__form button {
+    background-color: #db2777;
+    border-color: #db2777;
+    margin-top: 1em; }
+
+/* Confirmation message style */
+.containerConfirmation {
+  text-align: center; }
+  .containerConfirmation__thankYou, .containerConfirmation__orderSummary {
+    height: 25em;
+    background-color: #e7d2e0;
+    border-radius: 18px;
+    padding: 0.5em;
+    margin: 10px 0 25px 0;
+    box-shadow: 4px 2px 20px #d9d9d9;
+    height: unset;
+    margin-left: 1em;
+    margin-right: 1em; }
 
 /*# sourceMappingURL=style.css.map */

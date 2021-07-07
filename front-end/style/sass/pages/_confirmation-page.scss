@@ -1,0 +1,17 @@
+//   --------------------  //
+// /* CONFIRMATION PAGE */ //
+// Dedicated to order conf //
+//  ---------------------  //
+
+/* Confirmation message style */
+
+.containerConfirmation {
+    text-align: center;
+    &__thankYou,
+    &__orderSummary {
+        @include box;
+        height: unset;
+        margin-left: 1em;
+        margin-right: 1em;
+    }
+}
