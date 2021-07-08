@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="style/css/style.css">
     <!-- Lien avec le fichier Javascript -->
     <script src="js/index.js" defer></script>
+    <script src="js/api.js" defer></script>
     <!-- Importation des Polices Shrikhand et Roboto -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Shrikhand&display=swap" rel="stylesheet">
@@ -52,8 +53,7 @@
             
             <!-- Template d'une box "doudou" -->
             <template id="teddy" class="containerTeddies">
-                <a id="teddyLink" href="">
-                    <figure class="containerTeddies__boxes">
+                <figure class="containerTeddies__boxes">
                     <img id="teddyImage" class="containerTeddies__boxes--img">
                     <h3 id="teddyName" class="containerTeddies__boxes--name"></h3>
                     <div class="containerTeddies__boxes--fullstars">
@@ -65,12 +65,18 @@
                     </div>
                     <span id="teddyPrice" class="containerTeddies__boxes--price"></span>
                     <p id="teddyDescription" class="containerTeddies__boxes--description"></p>
-                    </figure>
-                </a>
+                    <a id="teddyLink" href="">
+                        <div class="containerTeddies__boxes--btn d-grid gap-2">
+                            <button class="btn" type="button">Commandez ce doudou !</button>
+                        </div>
+                    </a>
+                </figure>
             </template> 
 
             
-            <!-- Liste des doudous / Basic HTML et CSS / Inspiration pour JS -->
+            <!-- 
+            Liste des doudous / Basic HTML et CSS / Inspiration pour JS 
+            
             <div class="containerTeddies">
                 <div class="containerTeddies__boxes">
                     <a href="produit.html"><img src="../back-end/images/teddy_1.jpg" alt="Photo de l'ourson Norbert" class="containerTeddies__boxes--img"/>
@@ -146,7 +152,7 @@
                     <p class="containerTeddies__boxes--price">Seulement <strong>55€</strong></p>
                     </a>
                 </div>
-            </div>
+            </div> -->
         </div>
     </main>
 

@@ -45,6 +45,7 @@
         &--price {
             font-size: 1.3em;
             margin-bottom: unset;
+            font-weight: bold;
         }
         &--fullstars {
             @include colorFullStar;
@@ -53,6 +54,12 @@
         }
         &--emptystars {
             @include colorEmptyStar;
+        }
+        &--btn button {
+            margin-top: 1em;
+            background-color: $color-btn;
+            color: $color-white;
+            font-size: 1.2em;
         }
     }
 }

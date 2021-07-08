@@ -12,6 +12,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <!-- Lien avec fichier style.css -->
     <link rel="stylesheet" href="style/css/style.css">
+    <!-- Lien avec le fichier Javascript -->
+    <script src="js/product.js" defer></script>
+    <script src="js/api.js" defer></script>
     <!-- Importation des Polices Shrikhand et Roboto -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Shrikhand&display=swap" rel="stylesheet">
@@ -35,13 +38,38 @@
             </a>
             <a href="panier.html" class="header__navbar--panier" >Panier</a>
     </header>
-    <!-- MAIN -->
 
+    <!-- MAIN -->
     <main>
         <div class="heading">
             <h1 class="heading__logo">OriTeddies</h1>
             <h2 class="heading__sublogo">Vous êtes intéressé par ce doudou ?</h2>
         </div>
+
+
+
+        <!-- Box produit doudou / Affichage dynamique JavaScript -->
+        <div class="containerProduct__boxes">
+            <img class="containerProduct__boxes--img" id="teddyImage" src="">
+            <h3 class="containerProduct__boxes--name">Le doudou "<span id="teddyName"></span>"</h3>
+            <div class="containerTeddies__boxes--fullstars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <span class="containerTeddies__boxes--emptystars"><i class="fas fa-star"></i></span>
+            </div>
+            <p id="teddyDescription" class="containerProduct__boxes--description"></p>
+            <p id="teddyPrice" class="containerProduct__boxes--price"></p>
+            <h4 id="teddyColors" class="containerProduct__boxes--color">Choisissez sa couleur : </h4>
+            <div class="containerProduct__boxes--btn d-grid gap-2">
+                <button id="addToCart" class="btn" type="button">Ajoutez au panier</button>
+            </div>
+        </div>
+
+        <!--
+        Box doudou / Basic HTML et CSS / Inspiration pour JS
+
         <div class="containerProduct__boxes">
             <img src="../back-end/images/teddy_1.jpg" alt="Photo de l'ourson Norbert" class="containerProduct__boxes--img"/>
             <h3 class="containerProduct__boxes--name">Norbert</h3>
@@ -67,6 +95,7 @@
                 <button class="btn" type="button">Ajouter au panier</button>
             </div>
         </div>
+        -->
     </main>
 
     <!-- FOOTER -->

@@ -92,13 +92,19 @@ body {
     margin-bottom: 0.2em; }
   .containerTeddies__boxes--price {
     font-size: 1.3em;
-    margin-bottom: unset; }
+    margin-bottom: unset;
+    font-weight: bold; }
   .containerTeddies__boxes--fullstars {
     color: #ffa500;
     font-size: 1.5em;
     margin-bottom: 0.2em; }
   .containerTeddies__boxes--emptystars {
     color: grey; }
+  .containerTeddies__boxes--btn button {
+    margin-top: 1em;
+    background-color: #db2777;
+    color: #FFF;
+    font-size: 1.2em; }
 
 /* Product style */
 .heading__logo {
@@ -131,7 +137,8 @@ body {
     font-weight: bold;
     margin-top: 0.2em; }
   .containerProduct__boxes--price {
-    font-size: 1.3em; }
+    font-size: 1.3em;
+    font-weight: bold; }
   .containerProduct__boxes--fullstars {
     color: #ffa500;
     font-size: 1.5em; }
