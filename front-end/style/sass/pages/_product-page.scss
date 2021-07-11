@@ -59,11 +59,16 @@
             margin: 10px;
             border-radius: 10px; 
         }
-        &--btn button {
-            margin-top: 1em;
+        button {
+            margin-top: 2em;
             background-color: $color-btn;
             color: $color-white;
             font-size: 1.2em;
         }
     }
+}
+
+
+.form-control {
+    width: 20%;
 }

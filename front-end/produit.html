@@ -13,15 +13,14 @@
     <!-- Lien avec fichier style.css -->
     <link rel="stylesheet" href="style/css/style.css">
     <!-- Lien avec le fichier Javascript -->
-    <script src="js/product.js" defer></script>
-    <script src="js/api.js" defer></script>
+
     <!-- Importation des Polices Shrikhand et Roboto -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Shrikhand&display=swap" rel="stylesheet">
     <!-- Importation icones de bibliothèque fontawesome -->
     <script src="https://kit.fontawesome.com/57076f09a0.js" crossorigin="anonymous"></script>
     <!-- Description page pour apparaître dans pages résultats moteur de recherche -->
-    <meta name="description" content="Orinoco révolutionne le monde des doudous tout doux ! 
+    <meta name="description" content="OriTeddies révolutionne le monde des doudous tout doux ! 
     Aidez votre bébé à éveiller ses sens à travers un large choix de peluches douces et sécurisantes.">
     <!-- Titre de la page -->
     <title>Orinoco - Nos doudous</title>
@@ -37,6 +36,7 @@
                 <img src="img/logo.png" class="header__navbar--img" alt="logo orinoco"/>
             </a>
             <a href="panier.html" class="header__navbar--panier" >Panier</a>
+        </nav>
     </header>
 
     <!-- MAIN -->
@@ -46,26 +46,33 @@
             <h2 class="heading__sublogo">Vous êtes intéressé par ce doudou ?</h2>
         </div>
 
+        <!-- Container box produit -->
+        <div class="containerProduct" id="containerProduct">
 
-
-        <!-- Box produit doudou / Affichage dynamique JavaScript -->
-        <div class="containerProduct__boxes">
-            <img class="containerProduct__boxes--img" id="teddyImage" src="">
-            <h3 class="containerProduct__boxes--name">Le doudou "<span id="teddyName"></span>"</h3>
-            <div class="containerTeddies__boxes--fullstars">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <span class="containerTeddies__boxes--emptystars"><i class="fas fa-star"></i></span>
-            </div>
-            <p id="teddyDescription" class="containerProduct__boxes--description"></p>
-            <p id="teddyPrice" class="containerProduct__boxes--price"></p>
-            <h4 id="teddyColors" class="containerProduct__boxes--color">Choisissez sa couleur : </h4>
-            <div class="containerProduct__boxes--btn d-grid gap-2">
-                <button id="addToCart" class="btn" type="button">Ajoutez au panier</button>
-            </div>
         </div>
+        
+        
+
+        <!-- Box produit doudou / Affichage dynamique JavaScript 1er essai
+        <div class="containerProduct">
+            <div class="containerProduct__boxes">
+                <img class="containerProduct__boxes--img" id="teddyImage" src="">
+                <h3 class="containerProduct__boxes--name">Le doudou "<span id="teddyName"></span>"</h3>
+                <div class="containerProduct__boxes--fullstars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <span class="containerProduct__boxes--emptystars"><i class="fas fa-star"></i></span>
+                </div>
+                <p id="teddyDescription" class="containerProduct__boxes--description"></p>
+                <p id="teddyPrice" class="containerProduct__boxes--price"></p>
+                <h4 id="teddyColors" class="containerProduct__boxes--color">Choisissez sa couleur : </h4>
+                <div class="containerProduct__boxes--btn d-grid gap-2">
+                    <button id="addToCart" class="btn" type="button">Ajoutez au panier</button>
+                </div>
+            </div>
+        </div> -->
 
         <!--
         Box doudou / Basic HTML et CSS / Inspiration pour JS

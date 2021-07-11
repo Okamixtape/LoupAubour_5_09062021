@@ -17,14 +17,7 @@
     }
 }
 
-#teddiesList {
-    padding-left: unset;
-}
-
 .containerTeddies {
-    &__boxes a {
-        @include normalizeText;
-    }
     &__boxes {
         @include box;
         margin-left: 1em;
@@ -55,7 +48,7 @@
         &--emptystars {
             @include colorEmptyStar;
         }
-        &--btn button {
+        &--btn {
             margin-top: 1em;
             background-color: $color-btn;
             color: $color-white;

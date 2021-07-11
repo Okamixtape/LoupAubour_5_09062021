@@ -64,12 +64,6 @@ body {
   text-align: center;
   margin-bottom: 1em; }
 
-#teddiesList {
-  padding-left: unset; }
-
-.containerTeddies__boxes a {
-  color: #000;
-  text-decoration: inherit; }
 .containerTeddies__boxes {
   height: 25em;
   background-color: #e7d2e0;
@@ -100,7 +94,7 @@ body {
     margin-bottom: 0.2em; }
   .containerTeddies__boxes--emptystars {
     color: grey; }
-  .containerTeddies__boxes--btn button {
+  .containerTeddies__boxes--btn {
     margin-top: 1em;
     background-color: #db2777;
     color: #FFF;
@@ -153,11 +147,14 @@ body {
     padding: 5px;
     margin: 10px;
     border-radius: 10px; }
-  .containerProduct__boxes--btn button {
-    margin-top: 1em;
+  .containerProduct__boxes button {
+    margin-top: 2em;
     background-color: #db2777;
     color: #FFF;
     font-size: 1.2em; }
+
+.form-control {
+  width: 20%; }
 
 /* Cart style */
 .containerCart__listBox {
