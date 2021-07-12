@@ -4,7 +4,7 @@
 //                                                     //
 /////////////////////////////////////////////////////////
 
-// Fonction principale pour récupérer les données de l'API et les mettre en forme dans le DOM (HTML)
+// Fonction principale de la page / récupérer les données de l'API et les mettre en forme dans le DOM (HTML)
 const getTeddies = async function (url) {
 
     // Récupération des données de l'API (instruction qu'on souhaite exécuter)
@@ -12,13 +12,13 @@ const getTeddies = async function (url) {
         // Requête faite à l'URL
         let response = await fetch(url)
 
-        // et promesse qui se résoud si accès aux données (HTTP-status is 200-299)
+        // Promesse qui se résoud si accès aux données (HTTP-status is 200-299)
         if (response.ok) { 
 
             // Résulats des données en JSON (objet JavaScript)
             let teddies = await response.json()
 
-            // console.log(teddies); => Test Ok (on récupère les 5 arrays)
+            // console.log(teddies); => Test OK (on récupère les 5 arrays)
 
             // Création d'une boucle pour parcourir l'objet et création des éléments dans le DOM
             for (let teddy of teddies) {
@@ -26,7 +26,7 @@ const getTeddies = async function (url) {
                 // Retourner l'élément qui a l'attribut ID "containerTeddies"
                 const containerTeddies = document.getElementById('containerTeddies')
 
-                // Création d'une "div" box comprenant l'image / nom / description / prix et bouton pour chaque TEDDY
+                // Création d'une "div" box comprenant l'image / nom / description / prix et bouton pour chaque Teddy
                 const containerTeddies__boxes = createTag('div', 'containerTeddies__boxes', null, containerTeddies, null)
                 const img = createTag('img', 'containerTeddies__boxes--img', null, containerTeddies__boxes, {
                     'src': teddy.imageUrl,
@@ -42,7 +42,8 @@ const getTeddies = async function (url) {
 
         // Gestion de l'erreur si accès aux données mais problème serveur
         } else {
-            console.error('Retour du serveur : ', response.status)
+            console.error('Retour du serveur : ', response.status);
+            alert('Erreur rencontrée : ' + response.status);
         }
 
     // Gestion de l'erreur si impossibilité d'accèder aux données (ex : mauvaise adresse)

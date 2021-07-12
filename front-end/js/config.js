@@ -1,10 +1,9 @@
-////////////////////////////////////////////////////////////////
-//                                                            //
-// VARIABLES OU FONCTIONS POUR FACILITER ECRITURE JAVASCRIPT  //
-//                                                            //
-////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////
+//                                                             //
+//  VARIABLES OU FONCTIONS POUR FACILITER ECRITURE JAVASCRIPT  //
+//                                                             //
+/////////////////////////////////////////////////////////////////
 
-// INDEX.JS 
 
 // Constante qui comprends l'addresse URL de l'API
 
