@@ -15,12 +15,12 @@ const getTeddies = async function (url) {
         // Promesse qui se résoud si accès aux données (HTTP-status is 200-299)
         if (response.ok) { 
 
-            // Résulats des données en JSON (objet JavaScript)
+            // Résulats des données en JSON
             let teddies = await response.json()
 
             // console.log(teddies); => Test OK (on récupère les 5 arrays)
 
-            // Création d'une boucle pour parcourir l'objet et création des éléments dans le DOM
+            // Création d'une boucle pour parcourir les données et création des éléments dans le DOM
             for (let teddy of teddies) {
 
                 // Retourner l'élément qui a l'attribut ID "containerTeddies"

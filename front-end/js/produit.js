@@ -24,7 +24,7 @@ const getTeddy = async function (url) {
         // Promesse qui se résoud si accès aux données (HTTP-status is 200-299)
         if (response.ok) {
 
-            // Résulats des données en JSON (objet JavaScript)
+            // Résulats des données en JSON
             let teddy = await response.json()
 
             // console.log(teddy); => Test OK (on récupère l'array du teddy sélectionné)
@@ -63,12 +63,75 @@ const getTeddy = async function (url) {
             // Bouton "Ajoutez "Teddy" au panier"
             const button = createTag('button', 'btn', 'Ajoutez' + ' ' + teddy.name + ' ' + 'au panier', containerProduct__boxes, null)
 
+            // Fonction Ajout au panier / Gestion du panier
+            // Récupération des données sélectionnées par l'utilisateur et envoie au panier
+
+            function clickAddBasket(event) {
+                event.preventDefault()
+                
+                // Déclaration des données du/des teddys(ies) incluses dans le panier (valeurs du formulaire)
+
+                let teddiesChosen = {
+                    teddyName: teddy.name,
+                    teddyId: teddy._id,
+                    teddyColor: select.value,
+                    quantity: 1,
+                    teddyPrice: teddy.price / 100,
+                }
+
+                // Déclaration de la variable couleur du Teddy (pour l'avoir dans le scope)
+                const teddyColor = select.value;
+
+                // console.log(teddiesChosen); => Test OK (on récupère les données demandées du teddy qu'on veut ajouter au panier)
+
+                // Stockage Local / Stocker la récupération des valeurs du formulaire dans le local storage
+                
+                // Déclaration de la variable comprenant key et values Stockage des données du/des teddy(ies) dans le localStorage
+                // JSON.parse : Convertir les données situées dans le local Storage au format JSON en valeur JavaScript
+                let storedTeddies = JSON.parse(localStorage.getItem('addTeddy'))
+
+                // console.log(storedTeddies);
+
+                // Message popup après clic sur bouton "ajout au panier" = Continuer mes achats ou Voir mon panier
+                const popupConfirmation = () => {
+                    if (window.confirm('Le doudou ' + teddy.name + ' version "' + teddyColor + '" a bien été ajouté à votre panier ! Souhaitez-vous continuer vos achats ? (Ok : Oui / Annuler : Voir mon panier)')) {
+                        window.location.href = "index.html";
+                    } else {
+                        window.location.href = "panier.html";
+                    }
+                }
+                // Cas s'il y a DÉJÀ de teddies enregistrés dans le local Storage
+                if (storedTeddies) {
+                    storedTeddies.push(teddiesChosen);
+                    localStorage.setItem('addTeddy', JSON.stringify(storedTeddies));
+
+                    // console.log(storedTeddies); => Test OK
+
+                    // Message popup
+                    popupConfirmation();
+
+                // Cas s'il n'y a PAS de teddy enregistré dans le local Storage
+                } else {
+                    storedTeddies = [];
+                    storedTeddies.push(teddiesChosen);
+                    localStorage.setItem('addTeddy', JSON.stringify(storedTeddies));
+
+                    // console.log(storedTeddies); => Test OK
+
+                    // Message popup
+                    popupConfirmation();
+                }
+            }
+
+            // Récupération des données et envoi au panier à l'écoute de l'évènement du clique sur le bouton "Ajout au panier"
+            button.addEventListener("click", clickAddBasket)
+
         // Gestion de l'erreur si accès aux données mais problème serveur
         } else {
             console.error('Retour du serveur : ', response.status);
             alert('Erreur rencontrée : ' + response.status);
         }
-        
+
     // Gestion de l'erreur si impossibilité d'accèder aux données (ex : mauvaise adresse)
     } catch (error) {
         alert("Erreur : " + error)
