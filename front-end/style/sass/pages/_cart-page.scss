@@ -17,6 +17,14 @@
     }
 }
 
+.listTeddies {
+    &__eachTeddy {
+        &--price {
+            margin-right: 0.5em;
+        }
+    }
+}
+
 .containerContact {
     @include box;
     height: unset;

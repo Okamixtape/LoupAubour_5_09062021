@@ -171,6 +171,9 @@ body {
   flex-direction: column;
   text-align: center; }
 
+.listTeddies__eachTeddy--price {
+  margin-right: 0.5em; }
+
 .containerContact {
   height: 25em;
   background-color: #e7d2e0;
