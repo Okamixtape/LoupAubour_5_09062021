@@ -13,7 +13,10 @@ const containerCart__listBox__name = createTag('h3', 'containerCart__listBox--na
 // Récupération des données du local Storage pour affichage de la commande sur page panier.html 
 // et gestion commande (supression teddy ou panier) puis validation (formulaire)
 function getStoredTeddies() {
+
+    // Récupération des données du local Storage
     let storedTeddies = JSON.parse(localStorage.getItem('addTeddy'))
+    // console.log(storedTeddies); => Test OK
     
     // Si le panier est vide = Afficher "Vous n'avez encore rien commandé !"
     if (storedTeddies === null || storedTeddies.length === 0) {
@@ -81,6 +84,8 @@ function getStoredTeddies() {
     
         const reducer = (accumulator, currentValue) => accumulator + currentValue
         const totalPrice = calculPrice.reduce(reducer, 0)
+
+        // console.log(totalPrice); => Test OK
     
         const total = createTag('p', 'containerTeddies__listBox--totalPrice text-center', 'Montant total du panier = ' + totalPrice + ' €', containerCart__listBox, null)
 
@@ -247,7 +252,7 @@ function getStoredTeddies() {
         mail.addEventListener("change", function (e) {
             if (validMail(mail.value)) {} else {
                 e.preventDefault()
-                alert("Cette adresse mail n'est pas valide, veuillez en renseigner une nouvelle (exemple d'adresse valide : abcd@mail.com).")
+                alert("Cette adresse mail n'est pas valide, veuillez en renseigner une nouvelle (exemple d'adresse valide : jean.dupont@gmail.com).")
             }
         })
 
@@ -266,6 +271,7 @@ function getStoredTeddies() {
                 // Envoi du montant total de la commande au localStorage
                 localStorage.setItem('totalPrice', totalPrice)
                 const storagePrice = localStorage.getItem('totalPrice')
+                // console.log(storagePrice); => Test OK
 
                 // Création d'une variable qui comprends les données du formulaire
                 let contact = {
@@ -276,7 +282,7 @@ function getStoredTeddies() {
                     city: city.value,
                     email: mail.value,
                 }
-
+                // console.log(contact); => Test OK
 
                 // Création d'un tableau qui comprends les données des produits commandés
                 let products = []
@@ -284,6 +290,7 @@ function getStoredTeddies() {
                     let productsId = storedTeddy.teddyId
                     products.push(productsId)
                 }
+                // console.log(products); => Test OK
 
 
                 // Regrouper les données du formulaire et des produits commandés dans la fonction send
@@ -291,6 +298,7 @@ function getStoredTeddies() {
                     contact,
                     products,
                 }
+                // console.log(send);
 
                 // Envoi des données au serveur (méthode POST)
                 const post = async function (data) {
@@ -306,6 +314,7 @@ function getStoredTeddies() {
                         // Si réponse du serveur OK
                         if (response.ok) {
                             let data = await response.json()
+                            // console.log(data.orderId); => Test OK
                             localStorage.setItem('Order', data.orderId)
                             window.location = 'confirmation.html'
                             localStorage.removeItem('addTeddy')
@@ -325,7 +334,7 @@ function getStoredTeddies() {
                 post(send)
             }
         }
-        
+
         // Écoute de l'évènement sur le bouton submit pour lancer fonction de confirmation
         submitBtn.addEventListener('click', confirmation)
     }
