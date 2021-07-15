@@ -10,7 +10,8 @@ const containerCart = document.getElementById('containerCart')
 const containerCart__listBox = createTag('div', 'containerCart__listBox', null, containerCart, null)
 const containerCart__listBox__name = createTag('h3', 'containerCart__listBox--name', null, containerCart__listBox, null)
 
-// Récupération des données du local Storage
+// Récupération des données du local Storage pour affichage de la commande sur page panier.html 
+// et gestion commande (supression teddy ou panier) puis validation (formulaire)
 function getStoredTeddies() {
     let storedTeddies = JSON.parse(localStorage.getItem('addTeddy'))
     
@@ -266,7 +267,7 @@ function getStoredTeddies() {
                 localStorage.setItem('totalPrice', totalPrice)
                 const storagePrice = localStorage.getItem('totalPrice')
 
-                // Création de l'objet contact (données du formulaire)
+                // Création d'une variable qui comprends les données du formulaire
                 let contact = {
                     firstName: firstName.value,
                     lastName: lastName.value,
@@ -277,7 +278,7 @@ function getStoredTeddies() {
                 }
 
 
-                // Création du tableau products (données des produits commandés)
+                // Création d'un tableau qui comprends les données des produits commandés
                 let products = []
                 for (storedTeddy of storedTeddies) {
                     let productsId = storedTeddy.teddyId
@@ -301,6 +302,7 @@ function getStoredTeddies() {
                                 'Content-Type': 'application/json'
                             }
                         })
+
                         // Si réponse du serveur OK
                         if (response.ok) {
                             let data = await response.json()
@@ -318,10 +320,12 @@ function getStoredTeddies() {
                         alert("Erreur : " + error)
                     }
                 }
+
                 // Envoi des données du formulaire et des produits commandés
                 post(send)
             }
         }
+        
         // Écoute de l'évènement sur le bouton submit pour lancer fonction de confirmation
         submitBtn.addEventListener('click', confirmation)
     }
