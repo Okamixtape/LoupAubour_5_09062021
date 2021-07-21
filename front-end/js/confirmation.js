@@ -18,5 +18,5 @@ const containerConfirmation__thankYou__paraOrder = createTag('p', 'containerConf
 const containerConfirmation__thankYou__paraPrice = createTag('p', 'containerConfirmation__thankYou--paragraphs card-text text-center', 'Montant total de votre commande : ' + totalPrice + ' €', containerConfirmation__thankYou, null)
 const containerConfirmation__thankYou__paraTy = createTag('p', 'containerConfirmation__thankYou--paragraphs card-text text-center font-weight-bold mt-3', "Merci pour votre commande de doudous OriTeddies, nous nous occupons dès maintenant de son expédition !", containerConfirmation__thankYou, null)
 
-// Efface le localStorage après avoir affiché les 
+// Efface le localStorage après avoir affiché le récapitulatif de la commande
 localStorage.clear()

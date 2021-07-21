@@ -14,22 +14,25 @@ const containerCart__listBox__name = createTag('h3', 'containerCart__listBox--na
 // et gestion commande (supression teddy ou panier) puis validation (formulaire)
 function getStoredTeddies() {
 
-    // Récupération des données du local Storage
+    // Déclaration de la variable pour récupérer les données du localStorage
+    // JSON.parse : Convertir les données au format JSON situées dans le local Storage en valeur JavaScript
     let storedTeddies = JSON.parse(localStorage.getItem('addTeddy'))
-    // console.log(storedTeddies); => Test OK
+
+    // console.log(storedTeddies); => Test OK (on récupère bien des tableaux 0, 1, 2)
     
-    // Si le panier est vide = Afficher "Vous n'avez encore rien commandé !"
+    // Si la clé addTeddy n'est pas présente pour recueillir les données de 'storedTeddies' ou si le panier est vide (pas de array présent) = Afficher "Vous n'avez encore rien commandé !"
     if (storedTeddies === null || storedTeddies.length === 0) {
         const containerCart__listBox__emptyBasket = createTag('p', 'containerCart__listBox__emptyBasket', "Vous n'avez encore rien commandé !", containerCart__listBox, null)
         localStorage.clear()
 
-        // console.log("Panier vide")
+        // console.log(storedTeddies); => Test OK (On récupère la valeur "null" car la clé 'addTeddy' n'est pas présente et ne peut pas recueillir les données de 'storedTeddies')
 
     // Si le panier n'est PAS vide : affichage des teddies qui sont dans le localStorage (récupération des StoredTeddies)
     } else {
 
-        // console.log("Panier PAS vide")
+        // console.log(storedTeddies); => Test OK (on récupère bien des tableaux 0, 1, 2 de données 'storedTeddies')
 
+        // Création dans le DOM de la liste des 'storedTeddies'
         for (let storedTeddy of storedTeddies) {
             const listTeddies = createTag('ul', 'listTeddies list-inline', null, containerCart__listBox, null)
             const eachTeddy = createTag('li', 'listTeddies__eachTeddy list-item m-2 d-flex justify-content-between', null, containerCart__listBox, null)
@@ -46,17 +49,23 @@ function getStoredTeddies() {
             // Fonction suppression d'un teddy du bouton deleteBtn
             function deleteTeddy(e) {
 
-                // Éviter comportement par défaut du deleteBtn (ex: rechargement de la page)
+                // Éviter comportement par défaut de deleteTeddy (ex: rechargement de la page)
                 e.preventDefault()
 
-                // Méthode de sélection des données du teddy à supprimer avec data-id et data-color (condition ET logique)
+                // Déclaration d'une variable pour permettre de sélectionner/filtrer des données d'un tableau de 'storedTeddies' à supprimer avec teddyId/data-id et teddyColor/data-color (condition ET logique) 
+                // data-* = « attributs de données personnalisés », permet d'échanger des informations dans un format propriétaire entre le HTML et le DOM afin de pouvoir les manipuler via des langage de scripts.
                 const storedTeddy = storedTeddies.filter(teddy => teddy.teddyId == e.target.getAttribute('data-id') && teddy.teddyColor == e.target.getAttribute('data-color'))[0]
                 
-                // Si égal ou supérieur à 1 = Moins 1 storedTeddy.quantity 
+                // console.log(storedTeddy) => Test OK (quantity: 1)
+
+                // Si égal ou supérieur à 1 = On supprime 1 storedTeddy.quantity (en filtrant son id et sa couleur)
                 if (storedTeddy.quantity >= 1) {
                     storedTeddy.quantity--
 
-                    // Et on supprime la ligne de commande du panier
+                    // console.log(storedTeddy) => Test OK (quantity: 0)
+
+                    // Suppression de la ligne de commande du panier
+                    // Maintenant qu'on ne trouve pas l'élément donné 'storedTeddy' dans un tableau => array.splice(index, 1) (renvoie le tableau avec l'élément supprimé)
                     if (storedTeddy.quantity === 0) {
                         const index = storedTeddies.indexOf(storedTeddy)
                         storedTeddies.splice(index, 1)
@@ -71,7 +80,7 @@ function getStoredTeddies() {
                 window.location.href = "panier.html"
             }
 
-            // Si clique sur deleteBtn (Écoute de l'évènement du clique) => Action de supression du teddy
+            // Si clique sur deleteBtn (Écoute de l'évènement du clique) => Action de supression d'un tableau teddy
             deleteBtn.addEventListener('click', deleteTeddy)
         }
 
@@ -81,11 +90,13 @@ function getStoredTeddies() {
             let article = storedTeddy.teddyPrice * storedTeddy.quantity
             calculPrice.push(article)
         }
+
+        // console.log(calculPrice) => Test OK (on récupère les tableaux de montant en chiffres)
     
         const reducer = (accumulator, currentValue) => accumulator + currentValue
         const totalPrice = calculPrice.reduce(reducer, 0)
 
-        // console.log(totalPrice); => Test OK
+        // console.log(totalPrice) Test OK (on récupère la somme des montants en chiffre des tableaux, même après suppression d'un produit)
     
         const total = createTag('p', 'containerTeddies__listBox--totalPrice text-center', 'Montant total du panier = ' + totalPrice + ' €', containerCart__listBox, null)
 
@@ -99,7 +110,7 @@ function getStoredTeddies() {
             // Éviter comportement par défaut du bouton (ex: rechargement de la page)
             e.preventDefault();
 
-            // .removeItem pour vider le stockage local
+            // .removeItem pour vider la clé 'addTeddy' du localStorage
             localStorage.removeItem('addTeddy')
 
             // Message d'alerte après suppression du panier
@@ -271,7 +282,8 @@ function getStoredTeddies() {
                 // Envoi du montant total de la commande au localStorage
                 localStorage.setItem('totalPrice', totalPrice)
                 const storagePrice = localStorage.getItem('totalPrice')
-                // console.log(storagePrice); => Test OK
+                
+                // console.log(storagePrice); => Test OK (on récupère le montant total de la commande)
 
                 // Création d'une variable qui comprends les données du formulaire
                 let contact = {
@@ -282,7 +294,8 @@ function getStoredTeddies() {
                     city: city.value,
                     email: mail.value,
                 }
-                // console.log(contact); => Test OK
+                
+                // console.log(contact); => Test OK (on récupère le tableau des données "contact")
 
                 // Création d'un tableau qui comprends les données des produits commandés
                 let products = []
@@ -290,7 +303,8 @@ function getStoredTeddies() {
                     let productsId = storedTeddy.teddyId
                     products.push(productsId)
                 }
-                // console.log(products); => Test OK
+                
+                // console.log(products); => Test OK (on récupère bien les ids des produits commandés)
 
 
                 // Regrouper les données du formulaire et des produits commandés dans la fonction send
@@ -298,7 +312,8 @@ function getStoredTeddies() {
                     contact,
                     products,
                 }
-                // console.log(send);
+                
+                // console.log(send); Test OK (on récupère bien les données des variables 'contact' et 'products')
 
                 // Envoi des données au serveur (méthode POST)
                 const post = async function (data) {
@@ -311,13 +326,17 @@ function getStoredTeddies() {
                             }
                         })
 
-                        // Si réponse du serveur OK
+                        // Si réponse du serveur OK => On récupère l'id de confirmation de commande
                         if (response.ok) {
                             let data = await response.json()
-                            // console.log(data.orderId); => Test OK
+                            
                             localStorage.setItem('Order', data.orderId)
+
+                            // console.log(data.orderId); Test OK (on récupère bien l'id de confirmation de commande)
+                            
                             window.location = 'confirmation.html'
                             localStorage.removeItem('addTeddy')
+
                         
                         // Sinon affichage du message d'erreur
                         } else {

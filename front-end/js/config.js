@@ -1,15 +1,14 @@
 /////////////////////////////////////////////////////////////////
 //                                                             //
-//  VARIABLES OU FONCTIONS POUR FACILITER ECRITURE JAVASCRIPT  //
+//  VARIABLES OU FONCTIONS POUR FACILITER ÉCRITURE JAVASCRIPT  //
 //                                                             //
 /////////////////////////////////////////////////////////////////
-
 
 // Constante qui comprends l'addresse URL de l'API
 
 const apiUrl = 'http://localhost:3000/api/teddies/'
 
-// Fonction permettant la création d'une balise et la définition de son contenu
+// Fonction permettant la création d'une élément et définition de son contenu / Ajout d'un enfant à un élément
 // (balise, nom de la classe, contenu, balise parente, attributs)
 
 function createTag(tag, className, content, parent, attributes) {

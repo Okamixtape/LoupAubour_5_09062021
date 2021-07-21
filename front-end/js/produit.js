@@ -7,34 +7,37 @@
 // Récupération de l'id du Teddy de la page
 
 const urlParams = new URLSearchParams(window.location.search)
-// console.log(urlParams) => 
+
+// console.log(urlParams) => Test OK (on récupère URLSearchParams)
 
 const id = urlParams.get('id')
-// console.log(id) => Test OK (on récupère l'id du Teddy sélectionné)
 
+// console.log(id) => Test OK (on récupère l'id du Teddy sélectionné / ex pour Norbert : 5be9c8541c9d440000665243)
 
 // Fonction principale de la page / récupérer les données du Teddy sélectionné et les mettre en forme dans le DOM (HTML)
 const getTeddy = async function (url) {
     
-    // Récupération des données de l'API
+    // Récupération des données de l'API (instruction qu'on souhaite exécuter)
     try {
-        // Requête faite à l'URL
+        // Requête faite à l'URL (on attends que la requête soit terminée)
         let response = await fetch(url)
+
+        // console.log(response) => Response {type: "cors", url: "http://localhost:3000/api/teddies/5be9c8541c9d440000665243", redirected: false, status: 200, ok: true, …}
 
         // Promesse qui se résoud si accès aux données (HTTP-status is 200-299)
         if (response.ok) {
 
-            // Résulats des données en JSON
+            // console.log(response.ok) => On récupère "true" (valeur booléenne)
+
+            // En attente de l'extraction des résulats des données en JSON
             let teddy = await response.json()
 
-            // console.log(teddy); => Test OK (on récupère l'array du teddy sélectionné)
+            // console.log(teddy); => Test OK (on récupère l'array du teddy "Norbert")
 
             // Retourner l'élément qui a l'attribut ID "containerProduct"
             const containerProduct = document.getElementById('containerProduct')
 
-            //Création des éléments dans le DOM (tag, className, content, parent, attributes)
-
-            // Création d'une "div" box comprenant l'image / nom / description / prix
+            // Création d'une "div" dans le DOM comprenant l'image / nom / description / prix / choix couleur avec les données du teddy sélectionné
             const containerProduct__boxes = createTag('div', 'containerProduct__boxes', null, containerProduct, null)
             const img = createTag('img', 'containerProduct__boxes--img', null, containerProduct__boxes, {
                 'src': teddy.imageUrl,
@@ -67,10 +70,11 @@ const getTeddy = async function (url) {
             // Récupération des données sélectionnées par l'utilisateur et envoie au panier
 
             function clickAddBasket(event) {
+
+                // Éviter comportement par défaut
                 event.preventDefault()
                 
-                // Déclaration des données du/des teddys(ies) incluses dans le panier (valeurs du formulaire)
-
+                // Déclaration d'une variable contenant les données du/des teddy(ies) à destination du panier (valeurs du formulaire)
                 let teddiesChosen = {
                     teddyName: teddy.name,
                     teddyId: teddy._id,
@@ -82,15 +86,16 @@ const getTeddy = async function (url) {
                 // Déclaration de la variable couleur du Teddy (pour l'avoir dans le scope)
                 const teddyColor = select.value;
 
-                // console.log(teddiesChosen); => Test OK (on récupère les données demandées du teddy qu'on veut ajouter au panier)
+                // console.log(teddiesChosen); => Test OK (on récupère les données du teddy qu'on veut ajouter au panier lors du "clic")
 
-                // Stockage Local / Stocker la récupération des valeurs du formulaire dans le local storage
+                //////  Stockage Local / Stocker localement les données du teddy (qu'on veut ajouter au panier)  //////
+                // Mettre l'objet de la variable (teddiesChosen) du panier dans le local storage pour le sauvegarder //
                 
-                // Déclaration de la variable comprenant key et values Stockage des données du/des teddy(ies) dans le localStorage
-                // JSON.parse : Convertir les données situées dans le local Storage au format JSON en valeur JavaScript
+                // Déclaration de la variable pour le stockage des données dans le localStorage
+                // JSON.parse : Convertir les données au format JSON situées dans le local Storage en valeur JavaScript
                 let storedTeddies = JSON.parse(localStorage.getItem('addTeddy'))
 
-                // console.log(storedTeddies);
+                // console.log(storedTeddies); => On récupère la valeur "null" car l'objet JSON ne peut être appelé ou construit, et, en dehors de ses deux méthodes, n’a pas de fonctionnalité propre.
 
                 // Message popup après clic sur bouton "ajout au panier" = Continuer mes achats ou Voir mon panier
                 const popupConfirmation = () => {
@@ -100,23 +105,26 @@ const getTeddy = async function (url) {
                         window.location.href = "panier.html";
                     }
                 }
-                // Cas s'il y a DÉJÀ de teddies enregistrés dans le local Storage
+
+                // Cas pour ajouter/push(mettre dans un tableau) un teddy (teddiesChosen) s'il y a DÉJÀ des teddies(clés) enregistrés dans le local Storage
                 if (storedTeddies) {
                     storedTeddies.push(teddiesChosen);
                     localStorage.setItem('addTeddy', JSON.stringify(storedTeddies));
 
-                    // console.log(storedTeddies); => Test OK
+                    // console.log(teddiesChosen); => Test OK (on récupère les infos du dernier teddy sélectionné)
+                    // console.log(storedTeddies); => Test OK (on récupère bien des tableaux 0, 1, 2)
 
                     // Message popup
                     popupConfirmation();
 
-                // Cas s'il n'y a PAS de teddy enregistré dans le local Storage
+                // SINON : Cas pour ajouter/push (mettre dans un tableau) un teddy (teddiesChosen) s'il n'y a PAS ENCORE de teddy(clé) enregistré dans le local Storage => ajout de "storedTeddies = [];" array pour y créer la clé nécessaire
                 } else {
                     storedTeddies = [];
                     storedTeddies.push(teddiesChosen);
                     localStorage.setItem('addTeddy', JSON.stringify(storedTeddies));
 
-                    // console.log(storedTeddies); => Test OK
+                    // console.log(teddiesChosen); => Test OK (on récupère les infos du teddy sélectionné)
+                    // console.log(storedTeddies); => Test OK (on récupère bien un tableau 0)
 
                     // Message popup
                     popupConfirmation();

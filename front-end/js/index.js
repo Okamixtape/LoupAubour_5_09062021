@@ -9,25 +9,28 @@ const getTeddies = async function (url) {
 
     // Récupération des données de l'API (instruction qu'on souhaite exécuter)
     try {
-        // Requête faite à l'URL
+        // Requête faite à l'URL (on attends que la requête soit terminée)
         let response = await fetch(url)
 
         // Promesse qui se résoud si accès aux données (HTTP-status is 200-299)
         if (response.ok) { 
 
-            // Résulats des données en JSON
+            // En attente de l'extraction des résulats des données en JSON
             let teddies = await response.json()
 
             // console.log(teddies); => Test OK (on récupère les 5 arrays)
 
-            // Création d'une boucle pour parcourir les données et création des éléments dans le DOM
+            // Création d'une boucle pour parcourir les données de chaque array et création des éléments dans le DOM
             for (let teddy of teddies) {
 
                 // Retourner l'élément qui a l'attribut ID "containerTeddies"
                 const containerTeddies = document.getElementById('containerTeddies')
 
-                // Création d'une "div" box comprenant l'image / nom / description / prix et bouton pour chaque Teddy
+                // Création d'une "div" dans le DOM comprenant l'image / nom / description / prix et bouton pour chaque Teddy
                 const containerTeddies__boxes = createTag('div', 'containerTeddies__boxes', null, containerTeddies, null)
+
+                // const test = createTag('test','containerTeddies__boxes--test', 'Je suis un test', containerTeddies__boxes, null) => Test OK
+                
                 const img = createTag('img', 'containerTeddies__boxes--img', null, containerTeddies__boxes, {
                     'src': teddy.imageUrl,
                     'alt': teddy.name
