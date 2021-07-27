@@ -8,7 +8,7 @@
 
 const apiUrl = 'http://localhost:3000/api/teddies/'
 
-// Fonction permettant la création d'une élément et définition de son contenu / Ajout d'un enfant à un élément
+// Fonction permettant la création d'un élément et la définition de son contenu / Ajout d'un enfant à un élément
 // (balise, nom de la classe, contenu, balise parente, attributs)
 
 function createTag(tag, className, content, parent, attributes) {

@@ -1,124 +1,75 @@
 <!DOCTYPE html>
 <html lang="fr">
 
-<head>
-    <!-- Universal Character Set Transformation Format - 8 bits -->
-    <meta charset="UTF-8">
-    <!-- Compatibilité Internet Explorer -->
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <!-- Définiton du viewport -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <!-- Lien avec fichier style.css -->
-    <link rel="stylesheet" href="style/css/style.css">
-    <!-- Lien avec le fichier Javascript -->
-    <script src="js/config.js" defer></script>
-    <script src="js/produit.js" defer></script>
-    <!-- Importation des Polices Shrikhand et Roboto -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Shrikhand&display=swap" rel="stylesheet">
-    <!-- Importation icones de bibliothèque fontawesome -->
-    <script src="https://kit.fontawesome.com/57076f09a0.js" crossorigin="anonymous"></script>
-    <!-- Description page pour apparaître dans pages résultats moteur de recherche -->
-    <meta name="description" content="OriTeddies révolutionne le monde des doudous tout doux ! 
-    Aidez votre bébé à éveiller ses sens à travers un large choix de peluches douces et sécurisantes.">
-    <!-- Titre de la page -->
-    <title>Orinoco - Nos doudous</title>
-</head>
+    <head>
+        <!-- Universal Character Set Transformation Format - 8 bits -->
+        <meta charset="UTF-8">
+        <!-- Compatibilité Internet Explorer -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <!-- Définiton du viewport -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <!-- Lien avec fichier style.css -->
+        <link rel="stylesheet" href="style/css/style.css">
+        <!-- Lien avec le fichier Javascript -->
+        <script src="js/config.js" defer></script>
+        <script src="js/produit.js" defer></script>
+        <!-- Importation des Polices Shrikhand et Roboto -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Shrikhand&display=swap" rel="stylesheet">
+        <!-- Importation icones de bibliothèque fontawesome -->
+        <script src="https://kit.fontawesome.com/57076f09a0.js" crossorigin="anonymous"></script>
+        <!-- Description page pour apparaître dans pages résultats moteur de recherche -->
+        <meta name="description" content="OriTeddies révolutionne le monde des doudous tout doux ! 
+        Aidez votre bébé à éveiller ses sens à travers un large choix de peluches douces et sécurisantes.">
+        <!-- Titre de la page -->
+        <title>Orinoco - Nos doudous</title>
+    </head>
 
-<!-- *** WATCH OUT BEM *** -->
+    <!-- *** WATCH OUT BEM *** -->
 
-<body>
-    <!-- HEADER -->
-    <header class="header">
-        <nav class="header__navbar">
-            <a href="index.html" class="header__navbar--anchor">
-                <img src="img/logo.png" class="header__navbar--img" alt="logo orinoco"/>
-            </a>
-            <a href="panier.html" class="header__navbar--panier" >Panier</a>
-        </nav>
-    </header>
+    <body>
+        <!-- HEADER -->
+        <header class="header">
+            <nav class="header__navbar">
+                <a href="index.html" class="header__navbar--anchor">
+                    <img src="img/logo.png" class="header__navbar--img" alt="logo orinoco"/>
+                </a>
+                <a href="panier.html" class="header__navbar--panier" >Panier</a>
+            </nav>
+        </header>
 
-    <!-- MAIN -->
-    <main>
-        <div class="heading">
-            <h1 class="heading__logo">OriTeddies</h1>
-            <h2 class="heading__sublogo">Vous êtes intéressé par ce doudou ?</h2>
-        </div>
-
-        <!-- Container box produit -->
-        <div class="containerProduct" id="containerProduct">
-
-        </div>
-        
-        
-
-        <!-- Box produit doudou / Affichage dynamique JavaScript 1er essai
-        <div class="containerProduct">
-            <div class="containerProduct__boxes">
-                <img class="containerProduct__boxes--img" id="teddyImage" src="">
-                <h3 class="containerProduct__boxes--name">Le doudou "<span id="teddyName"></span>"</h3>
-                <div class="containerProduct__boxes--fullstars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <span class="containerProduct__boxes--emptystars"><i class="fas fa-star"></i></span>
-                </div>
-                <p id="teddyDescription" class="containerProduct__boxes--description"></p>
-                <p id="teddyPrice" class="containerProduct__boxes--price"></p>
-                <h4 id="teddyColors" class="containerProduct__boxes--color">Choisissez sa couleur : </h4>
-                <div class="containerProduct__boxes--btn d-grid gap-2">
-                    <button id="addToCart" class="btn" type="button">Ajoutez au panier</button>
-                </div>
+        <!-- MAIN -->
+        <main>
+            <div class="heading">
+                <h1 class="heading__logo">OriTeddies</h1>
+                <h2 class="heading__sublogo">Vous êtes intéressé par ce doudou ?</h2>
             </div>
-        </div> -->
 
-        <!--
-        Box doudou / Basic HTML et CSS / Inspiration pour JS
+            <!-- Container box produit -->
+            <div class="containerProduct" id="containerProduct">
 
-        <div class="containerProduct__boxes">
-            <img src="../back-end/images/teddy_1.jpg" alt="Photo de l'ourson Norbert" class="containerProduct__boxes--img"/>
-            <h3 class="containerProduct__boxes--name">Norbert</h3>
-            <div class="containerTeddies__boxes--fullstars">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <span class="containerTeddies__boxes--emptystars"><i class="fas fa-star"></i></span>
             </div>
-            <p class="containerProduct__boxes--description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-            <p class="containerProduct__boxes--price">Seulement <strong>29€</strong></p>
-            <div class="containerProduct__boxes--color">
-                <label for="Choisissez la couleur de votre doudou">Choisissez la <strong>couleur</strong> de votre doudou :</label>
-                <select name="Choisissez la couleur de votre doudou">
-                    <option value="Tan">Tan</option>
-                    <option value="Chocolate">Chocolate</option>
-                    <option value="Black">Black</option>
-                    <option value="White">White</option>
-                </select>
-            </div>
-            <div class="containerProduct__boxes--btn d-grid gap-2">
-                <button class="btn" type="button">Ajouter au panier</button>
-            </div>
-        </div>
-        -->
-    </main>
+            
+        </main>
 
-    <!-- FOOTER -->
-    <footer class="footer">
-        <ul class="footer__navbar">
-            <li class="footer__navbar--legal">
-                <a href="">Mentions légales</a>
-            </li>
-            <li class="footer__navbar--contact">
-                <a href="mailto:contact@orinoco.com">Contact</a>
-            </li>
-        </ul>
-    </footer>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
-</body>
+        <!-- FOOTER -->
+        <footer class="footer">
+            <ul class="footer__navbar">
+                <li class="footer__navbar--legal">
+                    <a href="">Mentions légales</a>
+                </li>
+                <li class="footer__navbar--contact">
+                    <a href="mailto:contact@orinoco.com">Contact</a>
+                </li>
+            </ul>
+        </footer>
+
+        <!-- Separate scripts of Popper.js and Bootstrap -->
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    
+    </body>
 
 </html>

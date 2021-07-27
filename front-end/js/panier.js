@@ -64,14 +64,13 @@ function getStoredTeddies() {
 
                     // console.log(storedTeddy) => Test OK (quantity: 0)
 
-                    // Suppression de la ligne de commande du panier
-                    // Maintenant qu'on ne trouve pas l'élément donné 'storedTeddy' dans un tableau => array.splice(index, 1) (renvoie le tableau avec l'élément supprimé)
+                    // Maintenant qu'on ne trouve pas l'élément donné 'storedTeddy' dans un tableau => array.splice(index, 1) (renvoie le tableau avec l'élément supprimé / On supprime un produit à la fois)
                     if (storedTeddy.quantity === 0) {
                         const index = storedTeddies.indexOf(storedTeddy)
                         storedTeddies.splice(index, 1)
                     }
                 }
-                // Enregistrement du nouveau localStorage (mise à jour du stockage local après suppression)
+                // Enregistrement du nouveau localStorage (mise à jour du stockage local après suppression) => Suppression de la ligne de commande du panier
                 localStorage.setItem('addTeddy', JSON.stringify(storedTeddies))
                 JSON.parse(localStorage.getItem('addTeddy'))
     
