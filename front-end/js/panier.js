@@ -54,23 +54,18 @@ function getStoredTeddies() {
 
                 // Déclaration d'une variable pour permettre de sélectionner/filtrer des données d'un tableau de 'storedTeddies' à supprimer avec teddyId/data-id et teddyColor/data-color (condition ET logique) 
                 // data-* = « attributs de données personnalisés », permet d'échanger des informations dans un format propriétaire entre le HTML et le DOM afin de pouvoir les manipuler via des langage de scripts.
-                const storedTeddy = storedTeddies.filter(teddy => teddy.teddyId == e.target.getAttribute('data-id') && teddy.teddyColor == e.target.getAttribute('data-color'))[0]
+                const storedTeddy = storedTeddies.filter(teddy => teddy.teddyId == e.target.getAttribute('data-id') 
+                                                            && teddy.teddyColor == e.target.getAttribute('data-color'))[0]
                 
                 // console.log(storedTeddy) => Test OK (quantity: 1)
 
-                // Si égal ou supérieur à 1 = On supprime 1 storedTeddy.quantity (en filtrant son id et sa couleur)
+                // Si le teddy qu'on sélectionne (en filtrant son id et sa couleur) est égal ou supérieur à 1 = On supprime 1 storedTeddy.quantity (on le supprime)
                 if (storedTeddy.quantity >= 1) {
                     storedTeddy.quantity--
 
                     // console.log(storedTeddy) => Test OK (quantity: 0)
-
-                    // Maintenant qu'on ne trouve pas l'élément donné 'storedTeddy' dans un tableau => array.splice(index, 1) (renvoie le tableau avec l'élément supprimé / On supprime un produit à la fois)
-                    if (storedTeddy.quantity === 0) {
-                        const index = storedTeddies.indexOf(storedTeddy)
-                        storedTeddies.splice(index, 1)
-                    }
                 }
-                // Enregistrement du nouveau localStorage (mise à jour du stockage local après suppression) => Suppression de la ligne de commande du panier
+                // Enregistrement du nouveau localStorage (mise à jour du stockage local après suppression) => Suppression de la ligne de commande du panier du produit supprimé
                 localStorage.setItem('addTeddy', JSON.stringify(storedTeddies))
                 JSON.parse(localStorage.getItem('addTeddy'))
     
@@ -103,7 +98,7 @@ function getStoredTeddies() {
         const containerTeddies__listBox__totalDelete = createTag('div', 'containerTeddies__listBox--totalDelete text-center ', null, containerCart__listBox, null)
         const containerTeddies__listBox__totalDeleteBtn = createTag('button', 'btn btn-danger', 'Vider le panier', containerTeddies__listBox__totalDelete, null)
         
-        // Fonction pour supprimer le total du panier
+        // Fonction pour supprimer tout le panier
         function deleteBasket(e) {
 
             // Éviter comportement par défaut du bouton (ex: rechargement de la page)
@@ -127,10 +122,9 @@ function getStoredTeddies() {
         const h3 = createTag('h3', 'm-md-5 text-center', 'Merci de remplir ce formulaire pour valider votre commande', containerCart__listBox__form, null)
 
         // Fonction expression régulière (REGEX) pour valider prénom, nom et ville
-        function validName(value) {
+        function validFirstnameLastnameCity(value) {
             return /^[A-Z-a-zéèàùôê\s]{3,40}$/.test(value)
         }
-
         // Fonction expression régulière (REGEX) pour valider adresse
         function validAddress(value) {
             return /^[A-Z-a-z-0-9éèàùôê\s]{5,80}$/.test(value)
@@ -160,7 +154,7 @@ function getStoredTeddies() {
 
         // Vérification de la validité du prénom
         firstName.addEventListener('change', function (event) {
-            if (validName(firstName.value)) {} else {
+            if (validFirstnameLastnameCity(firstName.value)) {} else {
                 event.preventDefault()
                 alert("Ce prénom n'est pas valide, veuillez en renseigner un nouveau.")
             }
@@ -180,7 +174,7 @@ function getStoredTeddies() {
 
         // Vérification de la validité du nom
         lastName.addEventListener('change', function (e) {
-            if (validName(lastName.value)) {} else {
+            if (validFirstnameLastnameCity(lastName.value)) {} else {
                 e.preventDefault()
                 alert("Ce nom n'est pas valide, veuillez en renseigner un nouveau.")
             }
@@ -240,7 +234,7 @@ function getStoredTeddies() {
 
         // Vérification de la validité de la ville
         city.addEventListener('change', function (e) {
-            if (validName(city.value)) {} else {
+            if (validFirstnameLastnameCity(city.value)) {} else {
                 e.preventDefault()
                 alert("Ce nom de ville n'est pas valide, veuillez en renseigner un nouveau.")
             }
@@ -275,7 +269,7 @@ function getStoredTeddies() {
 
         // Envoi des données du panier et du formulaire au serveur (condition : le formulaire doit être valide / ET logique)
         function confirmation(e) {
-            if (validName(firstName.value) && validName(lastName.value) && validAddress(address.value) && validName(city.value) && validMail(mail.value)) {
+            if (validFirstnameLastnameCity(firstName.value) && validFirstnameLastnameCity(lastName.value) && validAddress(address.value) && validFirstnameLastnameCity(city.value) && validMail(mail.value)) {
                 e.preventDefault()
 
                 // Envoi du montant total de la commande au localStorage

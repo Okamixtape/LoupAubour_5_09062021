@@ -145,5 +145,5 @@ const getTeddy = async function (url) {
         alert("Erreur : " + error)
     }
 }
-// Appel de la fonction getTeddy
+// Appel de la fonction getTeddy avec l'id d'un produit(teddy)
 getTeddy(apiUrl + id)
