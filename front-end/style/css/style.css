@@ -29,8 +29,26 @@ body {
     background-color: #e7d2e0;
     border-radius: 0.5em;
     padding: 2em; }
+    @media screen and (max-width: 450px) {
+      .header__navbar {
+        padding: 2em 1em; } }
+    @media screen and (min-width: 1400px) {
+      .header__navbar {
+        font-size: 1.5em; } }
+    @media screen and (min-width: 2200px) {
+      .header__navbar {
+        font-size: 1.7em; } }
+    @media screen and (min-width: 2560px) {
+      .header__navbar {
+        font-size: 1.9em; } }
     .header__navbar--img {
       width: 15em; }
+      @media screen and (max-width: 630px) {
+        .header__navbar--img {
+          width: 10em; } }
+      @media screen and (max-width: 350px) {
+        .header__navbar--img {
+          width: 8em; } }
     .header__navbar--panier {
       padding-right: 0.5em;
       font-size: 1.4em;
@@ -41,7 +59,17 @@ body {
 .footer {
   display: flex;
   height: 4em;
-  margin-top: 2em; }
+  margin-top: 2em;
+  padding-left: unset; }
+  @media screen and (min-width: 1400px) {
+    .footer {
+      font-size: 1.5em; } }
+  @media screen and (min-width: 2200px) {
+    .footer {
+      font-size: 1.7em; } }
+  @media screen and (min-width: 2560px) {
+    .footer {
+      font-size: 1.9em; } }
   .footer__navbar {
     display: flex;
     align-items: center;
@@ -63,6 +91,27 @@ body {
 .main__teddies--choose {
   text-align: center;
   margin-bottom: 1em; }
+  @media screen and (max-width: 450px) {
+    .main__teddies--choose {
+      font-size: 1.4em; } }
+  @media screen and (max-width: 390px) {
+    .main__teddies--choose {
+      font-size: 1.2em; } }
+  @media screen and (max-width: 350px) {
+    .main__teddies--choose {
+      font-size: 1em; } }
+@media screen and (min-width: 1400px) {
+  .main__teddies {
+    margin: 0 15vw;
+    font-size: 1.4rem; } }
+@media screen and (min-width: 2200px) {
+  .main__teddies {
+    margin: 0 20vw;
+    font-size: 1.5rem; } }
+@media screen and (min-width: 2560px) {
+  .main__teddies {
+    margin: 0 25vw;
+    font-size: 1.6rem; } }
 
 .containerTeddies__boxes {
   height: 25em;
@@ -73,6 +122,10 @@ body {
   box-shadow: 4px 2px 20px #d9d9d9;
   margin-left: 1em;
   margin-right: 1em; }
+  @media screen and (max-width: 700px) {
+    .containerTeddies__boxes {
+      height: 18em;
+      font-size: 2.5vw; } }
   .containerTeddies__boxes--img {
     height: 100%;
     width: 50%;
@@ -84,6 +137,18 @@ body {
   .containerTeddies__boxes--name {
     font-weight: bold;
     margin-bottom: 0.2em; }
+    @media screen and (max-width: 768px) {
+      .containerTeddies__boxes--name {
+        font-size: 1.6em; } }
+    @media screen and (min-width: 1400px) {
+      .containerTeddies__boxes--name {
+        font-size: 2.4rem; } }
+    @media screen and (min-width: 2200px) {
+      .containerTeddies__boxes--name {
+        font-size: 2.6rem; } }
+    @media screen and (min-width: 2560px) {
+      .containerTeddies__boxes--name {
+        font-size: 2.8rem; } }
   .containerTeddies__boxes--price {
     font-size: 1.3em;
     margin-bottom: unset;
@@ -99,6 +164,13 @@ body {
     background-color: #db2777;
     color: #FFF;
     font-size: 1.2em; }
+    @media screen and (max-width: 400px) {
+      .containerTeddies__boxes--btn {
+        line-height: 1;
+        padding: 0.275rem .5rem; } }
+    @media screen and (max-width: 545px) {
+      .containerTeddies__boxes--btn {
+        font-size: 2.3vw; } }
 
 /* Product style */
 .heading__logo {
@@ -106,6 +178,12 @@ body {
 .heading__sublogo {
   text-align: center;
   margin-bottom: 1em; }
+  @media screen and (max-width: 440px) {
+    .heading__sublogo {
+      font-size: 1.3em; } }
+  @media screen and (max-width: 340px) {
+    .heading__sublogo {
+      font-size: 1em; } }
 
 .containerProduct__boxes a {
   color: #000;
@@ -119,6 +197,34 @@ body {
   box-shadow: 4px 2px 20px #d9d9d9;
   margin-left: 1em;
   margin-right: 1em; }
+  @media screen and (max-width: 640px) {
+    .containerProduct__boxes {
+      font-size: 0.8em; } }
+  @media screen and (max-width: 700px) {
+    .containerProduct__boxes {
+      font-size: 0.9em; } }
+  @media screen and (max-width: 768px) {
+    .containerProduct__boxes {
+      height: 23em; } }
+  @media screen and (max-width: 430px) {
+    .containerProduct__boxes {
+      height: 24em;
+      font-size: 0.7em; } }
+  @media screen and (max-width: 340px) {
+    .containerProduct__boxes {
+      font-size: 0.6em; } }
+  @media screen and (min-width: 1400px) {
+    .containerProduct__boxes {
+      margin: 0 15vw;
+      font-size: 1.4rem; } }
+  @media screen and (min-width: 2200px) {
+    .containerProduct__boxes {
+      margin: 0 20vw;
+      font-size: 1.5rem; } }
+  @media screen and (min-width: 2560px) {
+    .containerProduct__boxes {
+      margin: 0 25vw;
+      font-size: 1.6rem; } }
   .containerProduct__boxes--img {
     height: 100%;
     max-width: 50%;
@@ -130,9 +236,24 @@ body {
   .containerProduct__boxes--name {
     font-weight: bold;
     margin-top: 0.2em; }
+    @media screen and (max-width: 425px) {
+      .containerProduct__boxes--name {
+        font-size: 1.6em; } }
+    @media screen and (min-width: 1400px) {
+      .containerProduct__boxes--name {
+        font-size: 2.4rem; } }
+    @media screen and (min-width: 2200px) {
+      .containerProduct__boxes--name {
+        font-size: 2.6rem; } }
+    @media screen and (min-width: 2560px) {
+      .containerProduct__boxes--name {
+        font-size: 2.8rem; } }
   .containerProduct__boxes--price {
     font-size: 1.3em;
     font-weight: bold; }
+    @media screen and (max-width: 625px) {
+      .containerProduct__boxes--price {
+        margin-bottom: 0.3em; } }
   .containerProduct__boxes--fullstars {
     color: #ffa500;
     font-size: 1.5em; }
@@ -147,11 +268,26 @@ body {
     padding: 5px;
     margin: 10px;
     border-radius: 10px; }
+  @media screen and (max-width: 555px) {
+    .containerProduct__boxes select.form-control {
+      width: 16%;
+      padding: .275rem .55rem;
+      font-size: 0.7rem;
+      line-height: 1.2; } }
   .containerProduct__boxes button {
     margin-top: 2em;
     background-color: #db2777;
     color: #FFF;
     font-size: 1.2em; }
+    @media screen and (max-width: 640px) {
+      .containerProduct__boxes button {
+        font-size: 1em; } }
+    @media screen and (max-width: 545px) {
+      .containerProduct__boxes button {
+        font-size: 0.85em; } }
+    @media screen and (max-width: 485px) {
+      .containerProduct__boxes button {
+        font-size: 0.7em; } }
 
 .form-control {
   width: 20%; }
@@ -170,6 +306,18 @@ body {
   display: flex;
   flex-direction: column;
   text-align: center; }
+  @media screen and (min-width: 768px) {
+    .containerCart__listBox {
+      margin: 0 10vw;
+      font-size: 1.3em; } }
+  @media screen and (min-width: 2200px) {
+    .containerCart__listBox {
+      margin: 0 16vw;
+      font-size: 1.8em; } }
+  @media screen and (min-width: 2560px) {
+    .containerCart__listBox {
+      margin: 0 25vw;
+      font-size: 2em; } }
   .containerCart__listBox--form {
     margin-top: 2em;
     padding: 1em 2em 1em 2em; }
@@ -183,6 +331,9 @@ body {
   color: #FFF;
   border-color: #db2777;
   margin-top: 1em; }
+  @media screen and (min-width: 768px) {
+    #submit.btn {
+      font-size: 1.3em; } }
 
 .listTeddies__eachTeddy--price {
   margin-right: 0.5em; }
@@ -219,5 +370,17 @@ body {
     height: unset;
     margin-left: 1em;
     margin-right: 1em; }
+    @media screen and (min-width: 768px) {
+      .containerConfirmation__thankYou, .containerConfirmation__orderSummary {
+        margin: 0 10vw; } }
+    @media screen and (min-width: 1400px) {
+      .containerConfirmation__thankYou, .containerConfirmation__orderSummary {
+        margin: 0 15vw; } }
+    @media screen and (min-width: 2200px) {
+      .containerConfirmation__thankYou, .containerConfirmation__orderSummary {
+        margin: 0 20vw; } }
+    @media screen and (min-width: 2560px) {
+      .containerConfirmation__thankYou, .containerConfirmation__orderSummary {
+        margin: 0 25vw; } }
 
 /*# sourceMappingURL=style.css.map */

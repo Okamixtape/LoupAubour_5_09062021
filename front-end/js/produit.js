@@ -106,7 +106,7 @@ const getTeddy = async function (url) {
                     }
                 }
 
-                // Cas pour ajouter/push(mettre dans un tableau) un teddy (teddiesChosen) s'il y a DÉJÀ des teddies(clés) enregistrés dans le local Storage
+                // Cas pour ajouter/push(mettre dans un tableau) un teddy (teddiesChosen) s'il y a DÉJÀ 'addTeddy' (clef) enregistré dans le local Storage
                 if (storedTeddies) {
                     storedTeddies.push(teddiesChosen);
                     localStorage.setItem('addTeddy', JSON.stringify(storedTeddies));
@@ -117,7 +117,7 @@ const getTeddy = async function (url) {
                     // Message popup
                     popupConfirmation();
 
-                // SINON : Cas pour ajouter/push (mettre dans un tableau) un teddy (teddiesChosen) s'il n'y a PAS ENCORE de teddy(clé) enregistré dans le local Storage => ajout de "storedTeddies = [];" array pour y créer la clé nécessaire
+                // SINON : Cas pour ajouter/push (mettre dans un tableau) un teddy (teddiesChosen) s'il n'y a PAS ENCORE de 'addTeddy' (clef) dans le local Storage => ajout de "storedTeddies = [];" array pour y créer la clé nécessaire
                 } else {
                     storedTeddies = [];
                     storedTeddies.push(teddiesChosen);
