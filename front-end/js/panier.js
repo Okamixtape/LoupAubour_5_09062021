@@ -65,6 +65,11 @@ function getStoredTeddies() {
 
                     // console.log(storedTeddy) => Test OK (quantity: 0)
                 }
+                // Maintenant que l'élément donné 'storedTeddy' est à 0 => array.splice(index, 1) (renvoie le tableau avec l'élément supprimé / On supprime un produit à la fois)
+                if (storedTeddy.quantity === 0) {
+                    const index = storedTeddies.indexOf(storedTeddy)
+                    storedTeddies.splice(index, 1)
+                }
                 // Enregistrement du nouveau localStorage (mise à jour du stockage local après suppression) => Suppression de la ligne de commande du panier du produit supprimé
                 localStorage.setItem('addTeddy', JSON.stringify(storedTeddies))
                 JSON.parse(localStorage.getItem('addTeddy'))
