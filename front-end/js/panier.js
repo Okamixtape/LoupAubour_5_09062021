@@ -8,7 +8,6 @@
 // Création d'une "div" comprenant le titre "Récapitulatif de votre panier"
 const containerCart = document.getElementById('containerCart')
 const containerCart__listBox = createTag('div', 'containerCart__listBox', null, containerCart, null)
-const containerCart__listBox__name = createTag('h3', 'containerCart__listBox--name', null, containerCart__listBox, null)
 
 // Récupération des données du local Storage pour affichage de la commande sur page panier.html 
 // et gestion commande (supression teddy ou panier) puis validation (formulaire)
@@ -34,7 +33,6 @@ function getStoredTeddies() {
 
         // Création dans le DOM de la liste des 'storedTeddies'
         for (let storedTeddy of storedTeddies) {
-            const listTeddies = createTag('ul', 'listTeddies list-inline', null, containerCart__listBox, null)
             const eachTeddy = createTag('li', 'listTeddies__eachTeddy list-item m-2 d-flex justify-content-between', null, containerCart__listBox, null)
             const teddyDetails = createTag('div', 'listTeddies__eachTeddy--details', 'x ' + storedTeddy.quantity + ' ' + storedTeddy.teddyName + ", " + storedTeddy.teddyColor, eachTeddy, null)
             const teddyPrice = createTag('div', 'listTeddies__eachTeddy--divPrice d-flex justify-content-between align-items-center', null, eachTeddy, null)
